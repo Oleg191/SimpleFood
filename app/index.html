@@ -13,49 +13,82 @@
     <header class="header">
         <div class="container">
             <div class="header__inner">
-              <nav class="menu">
                 <a class="logo" href="#">
                     <img class="logo__img" src="images/logo.svg" alt="Логотип">
                 </a>
-                <ul class="menu__list">
-                    <li class="menu__item">
-                        <a href="" class="menu__link">Главная</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__link">Блюда</a>
-                    </li>
-                    <li class="menu__item">
-                        <a href="" class="menu__link">Контакты</a>
-                    </li>
-                </ul>
-            </nav>
-            <nav class="user-nav">
-                <ul class="user-nav__list">
-                    <li class="user-nav__item">
-                        <a class="user-nav__icon" href="#"></a>
-                    </li>
-                    <li class="user-nav__item">
-                        <a class="user-nav__icon" href="#">
-                            <div class="user-nav__num">4</div>
-                        </a>
-                    </li>
-                </ul>
-            </nav>  
+                <div class="menu">
+                    <nav class="menu-nav">
+
+                        <ul class="menu-nav__list">
+                            <li class="menu-nav__item">
+                                <a href="" class="menu-nav__link menu-nav__link--active">Главная</a>
+                            </li>
+                            <li class="menu-nav__item">
+                                <a href="" class="menu-nav__link">Блюда</a>
+                            </li>
+                            <li class="menu-nav__item">
+                                <a href="" class="menu-nav__link">Контакты</a>
+                            </li>
+                        </ul>
+
+                    </nav>
+
+                    <nav class="user-nav">
+
+                        <ul class="user-nav__list">
+                            <li class="user-nav__item">
+                                <a class="user-nav__icon user-nav__icon--search" href="#"></a>
+                            </li>
+                            <li class="user-nav__item">
+                                <a class="user-nav__icon user-nav__icon--buy" href="#">
+                                    <span class="user-nav__num">4</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+
+
             </div>
-            
+
         </div>
     </header>
     <main>
-        <section class="hero" style="background-image: url(images/hero-pic.png); background-position: center bottom;">
+        <section class="hero section">
             <div class="container">
-                <h1 class="hero__title">
-                    Доставка<span>за 15 минут</span>
-                </h1>
-                <p class="hero__desc">
-                    Самый быстрый сервис доставки еды в вашем городе. Не уложимся в срок - доставка за наш счёт
-                </p>
-                <button class="button">Заказать</button>
-                <a class="add" href="#">Подробнее</a>
+                <div class="hero__inner">
+                    <div class="hero__content">
+                        <div class="hero__offer">
+                            <h1 class="hero__title">
+                                Доставка<span>за 15 минут</span>
+                            </h1>
+
+                            <p class="hero__desc">
+                                Самый быстрый сервис доставки еды в вашем городе. Не уложимся в срок - доставка за наш
+                                счёт
+                            </p>
+
+                        </div>
+
+                        <div class="cta">
+                            <ul class="cta__items">
+                                <li class="cta__item">
+                                    <a class="button" href="#">Заказать</a>
+                                </li>
+
+                                <li class="cta__item">
+                                    <a class="add" href="#">Подробнее</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="hero__img">
+                        <img src="images/content/hero-pic.png" alt="Куръер">
+                    </div>
+                </div>
+
             </div>
         </section>
 
