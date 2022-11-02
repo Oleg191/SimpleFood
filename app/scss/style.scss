@@ -16,7 +16,6 @@
     outline: 2px solid transparent;
     transition: all 0.3s;
     border-radius: 5px;
-
     &:focus {
         outline-color: rgba(255, 104, 56, 0.7);
     }
@@ -50,7 +49,11 @@
     .menu-nav__link--active {
         color: $accent;
     }
+}
 
+.menu-nav,
+.footer-nav,
+.contacts {
     &__link {
         color: $text;
         outline: 2px solid transparent;
@@ -86,7 +89,7 @@
     }
 
     &__item:not(:last-child) {
-        margin-right: 30px;
+        margin-right: 10px;
     }
 
     &__icon {
@@ -99,7 +102,7 @@
         border-radius: 5px;
         background-color: transparent;
         outline: 2px solid transparent;
-        transition: all 0.5s;
+        transition: background-color 0.5s ease;
 
         &:focus {
             outline-color: rgba(255, 104, 56, 0.7);
@@ -123,12 +126,16 @@
             background-size: 19px 19px;
             background-repeat: no-repeat;
             background-position: center;
+            background-color: $dark;
+            transition: background-color 0.3s ease;
         }
     }
 
     &__icon--search {
+
         &::before {
-            background-image: url(../images/icons/search-icon.svg);
+            background-image: url('../images/sprite.svg#icon-search');
+            mask-image: url('../images/sprite.svg#icon-search');
         }
     }
 
@@ -136,8 +143,16 @@
         position: relative;
 
         &::before {
-            background-image: url(../images/icons/buy-icon.svg);
+            background-image: url('../images/sprite.svg#icon-cart');
+            mask-image: url('../images/sprite.svg#icon-cart');
             background-size: 19px 18px;
+        }
+    }
+
+    &__icon--buy,
+    &__icon--search {
+        &:hover::before {
+            background: #fff;
         }
     }
 
@@ -155,7 +170,7 @@
     }
 }
 
-.sectiion {
+.section {
     margin-bottom: 120px;
 }
 
@@ -215,9 +230,11 @@
 .button {
     padding: 12px 32px;
     background-color: $accent;
+    border: none;
     border-radius: 5px;
     color: #fff;
     outline: 2px solid transparent;
+    cursor: pointer;
     transition: all 0.5s;
 
     &:focus {
@@ -240,10 +257,499 @@
 }
 
 .add {
-    text-decoration: underline
+    text-decoration: underline;
+    color: $text;
+
+    &:focus {
+        outline-color: rgba(255, 104, 56, 0.7);
+        text-decoration: none;
+    }
+
+    &:hover {
+        color: $accent;
+        text-decoration: none;
+    }
+
+    &:active {
+        text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+        outline-color: transparent;
+        color: $text;
+        text-decoration: none;
+    }
 }
 
+.add-btn {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+
+    &:focus {
+        outline-color: rgba(255, 104, 56, 0.7);
+        text-decoration: underline;
+    }
+}
+
+.title {
+    text-align: center;
+    color: $dark;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 1.3;
+    margin-bottom: 45px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    outline: 0;
+    outline-offset: 0;
+}
+
+.popular {
 
 
+    &__inner {
+        text-align: center;
+    }
+
+    &__title {
+        margin-bottom: 60px;
+    }
+
+    &__items-btn {
+        display: flex;
+        line-height: 1.3;
+        color: $dark;
+        margin-bottom: 45px;
+
+    }
+
+    &__item-btn {
+        margin-right: 20px;
+        position: relative;
+        width: fit-content;
+    }
+
+    &__items-cards {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px;
+        margin-bottom: 60px;
+    }
+
+    &__button {
+
+        color: $dark;
+        background: #fff;
+        outline: 2px solid $light;
+        max-width: 280px;
+        height: 70px;
+        padding-left: 86px;
+        transition: all 0.5s ease;
+
+        &:focus {
+            color: $dark;
+            background-color: transparent;
+        }
+
+        &:hover {
+            color: $accent;
+            background-color: rgba(255, 104, 56, 0.1);
+            outline: transparent;
+        }
+
+        &:active {
+            background: transparent;
+            outline-color: transparent;
+            color: $dark;
+            box-shadow: inset 0px -5px 12px rgba(255, 104, 56, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        &:active::before {
+            background: $accent;
+        }
+
+
+        &::before {
+            content: '';
+            background-repeat: no-repeat;
+            background-size: 44px;
+            position: absolute;
+            background: #fff;
+            height: 44px;
+            width: 44px;
+            left: 32px;
+            top: 13px;
+            transition: background-color 0.3s ease;
+        }
+
+        &--burger {
+            &::before {
+                background-image: url('../images/sprite.svg#icon-category-burger');
+                mask-image: url('../images/sprite.svg#icon-category-burger');
+            }
+        }
+
+
+        &--pizza {
+            &::before {
+                background-image: url('../images/sprite.svg#icon-category-pizza');
+                mask-image: url('../images/sprite.svg#icon-category-pizza');
+
+            }
+        }
+
+        &--sandvich {
+            &::before {
+                background-image: url('../images/sprite.svg#icon-category-sandvich');
+                mask-image: url('../images/sprite.svg#icon-category-sandvich');
+
+            }
+        }
+
+        &--asia {
+            &::before {
+                background-image: url('../images/sprite.svg#icon-category-asia');
+                mask-image: url('../images/sprite.svg#icon-category-asia');
+
+            }
+        }
+
+        &--dish {
+            &::before {
+                background-image: url('../images/sprite.svg#icon-category-dish');
+                mask-image: url('../images/sprite.svg#icon-category-dish');
+
+            }
+        }
+
+
+
+        &--burger,
+        &--pizza,
+        &--sandvich,
+        &--asia,
+        &--dish {
+            &:hover::before {
+                background: $accent;
+            }
+        }
+
+        &--burger,
+        &--pizza,
+        &--sandvich,
+        &--asia,
+        &--dish {
+            &:active::before {
+                background: $dark;
+            }
+        }
+
+        &--burger,
+        &--pizza,
+        &--sandvich,
+        &--asia,
+        &--dish {
+            &::before {
+                background: $dark;
+            }
+        }
+
+        &--active {
+            color: #fff;
+            background: $accent;
+
+            &::before {
+                background: #fff;
+            }
+        }
+
+        &__btn-title {
+            line-height: 1.3;
+            font-weight: 400;
+            font-size: 20px;
+            white-space: nowrap;
+        }
+
+
+    }
+
+}
+
+.popular-card {
+    text-align: center;
+    font-size: 15px;
+    outline: 1px solid $light;
+    background-color: #fff;
+    border-radius: 5px;
+
+    &__img {
+        padding: 20px 35px 0;
+        margin-bottom: 10px;
+    }
+
+    &__title {
+        color: $text;
+        max-width: 180px;
+        min-height: 36px;
+        margin-bottom: 10px;
+        line-height: 1;
+        font-weight: 400;
+        margin: 0 auto;
+    }
+
+    &__price {
+        display: block;
+        color: $dark;
+        font-weight: 500;
+        line-height: 1.4;
+        margin-bottom: 10px;
+    }
+
+    &__button {
+        font-size: 14px;
+        line-height: 1.3;
+        padding: 7px 16px;
+        margin-bottom: 20px;
+    }
+}
+
+.footer {
+    bottom: 0;
+
+    &__inner {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 70px;
+        position: relative;
+        margin-bottom: 60px;
+    }
+
+    &__logo{
+        max-width: 200px;
+        height: 39px;
+    }
+
+    &__form {
+        position: absolute;
+    }
+
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 130%;
+    bottom: 0;
+
+    &__logo {
+        height: 39px;
+    }
+
+    &__inner {
+        margin-bottom: 12px;
+    }
+
+    &__field {
+        padding: 13px 15px;
+        max-width: 200px;
+        border-radius: 5px;
+        border: none;
+        outline: 2px solid $stroke;
+
+        &::placeholder {
+            color: $stroke;
+        }
+
+        &:hover {
+            outline-color: $accent;
+        }
+
+        &:active::placeholder {
+            color: $dark;
+        }
+
+        &:active {
+            outline-color: $stroke;
+        }
+
+    }
+
+    &__button {
+        position: relative;
+        padding: 13px 38px 13px 69px;
+        font-weight: 500;
+        line-height: 130%;
+        max-width: 200px;
+
+        &::before {
+            content: '';
+            background-image: url('../images/sprite.svg#icon-telegram');
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center;
+            mask-image: url('../images/sprite.svg#icon-telegram');
+            background: #fff;
+            background-size: 16px;
+            width: 16px;
+            height: 16px;
+            left: 38px;
+        }
+
+        &:active::before {
+            background: $accent;
+        }
+
+        &:hover::before {
+            background: $accent;
+        }
+
+        &:focus::before {
+            background: $accent;
+        }
+
+
+    }
+}
+
+.footer-nav {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 70px;
+        font-size: 18px;
+        line-height: 1.3;
+        color: $text;
+        max-width: 571px;
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 20px;
+    }
+
+    &__item {
+        white-space: nowrap;
+    }
+}
+
+.contacts {
+    &__item {
+        font-size: 16px;
+        line-height: 1.7;
+        margin-bottom: 15px;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            background-position: center;
+            background-repeat: no-repeat;
+            background: $text;
+            background-size: 24px;
+            width: 24px;
+            height: 24px;
+        }
+
+        &--location {
+            &::before {
+                background-image: url('../images/sprite.svg#icon-location');
+                mask-image: url('../images/sprite.svg#icon-location');
+            }
+        }
+
+        &--phone {
+            &::before {
+                background-image: url('../images/sprite.svg#icon-call');
+                mask-image: url('../images/sprite.svg#icon-call');
+            }
+        }
+
+        &--mail {
+            &::before {
+                background-image: url('../images/sprite.svg#icon-message');
+                mask-image: url('../images/sprite.svg#icon-message');
+            }
+        }
+
+        &--location,
+        &--phone,
+        &--mail {
+            &::before {
+                background: $text;
+            }
+        }
+    }
+
+    &__item:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    &__link {
+        padding-left: 31px;
+    }
+}
+
+.social {
+    position: relative;
+    display: flex;
+
+    &__item {
+        width: 39px;
+        margin-right: 20px;
+    }
+
+    &__link {
+        position: absolute;
+        background-color: $stroke;
+        width: 39px;
+        height: 39px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        transition: all 0.3s ease-in;
+        fill: $text;
+
+        &:focus {
+            outline-color: rgba(255, 104, 56, 0.7);
+            background-color: rgba(255, 122, 80, 0.1);
+        }
+
+        &:hover {
+            background-color: #FF7A50;
+            fill: #fff;
+        }
+
+        &:active {
+            background-color: #FFF2ED;
+            outline-color: transparent;
+            fill: $accent;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+    }
+}
+
+.copy {
+    padding: 30px 0;
+    border-top: 1px solid $stroke;
+    display: block;
+    text-align: center;
+}
 
 @import 'media';
