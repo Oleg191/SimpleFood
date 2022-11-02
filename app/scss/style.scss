@@ -3,7 +3,245 @@
 @import 'reset';
 @import 'global';
 
+.header {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 60px 0;
+    }
+}
 
+.logo {
+    outline: 2px solid transparent;
+    transition: all 0.3s;
+    border-radius: 5px;
+
+    &:focus {
+        outline-color: rgba(255, 104, 56, 0.7);
+    }
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &:active {
+        opacity: 0.5;
+        outline-color: transparent
+    }
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu-nav {
+    &__list {
+        display: flex;
+        margin-right: 62px;
+    }
+
+    &__item:not(:last-child) {
+        padding-right: 43px;
+    }
+
+    &__link,
+    .menu-nav__link--active {
+        color: $accent;
+    }
+
+    &__link {
+        color: $text;
+        outline: 2px solid transparent;
+        transition: color 0.3s;
+        border-radius: 5px;
+
+        &:focus {
+            outline-color: rgba(255, 104, 56, 0.7);
+        }
+
+        &:hover {
+            color: $accent;
+        }
+
+        &:active {
+            text-shadow: 2px 2px 5px rgba(49, 53, 43, 0.5);
+            outline-color: transparent;
+            color: $text;
+        }
+    }
+}
+
+.user-nav {
+
+    &__list {
+        display: flex;
+        margin-right: 12px;
+    }
+
+    &__item {
+        position: relative;
+
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 30px;
+    }
+
+    &__icon {
+        color: $dark;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        background-color: transparent;
+        outline: 2px solid transparent;
+        transition: all 0.5s;
+
+        &:focus {
+            outline-color: rgba(255, 104, 56, 0.7);
+            background-color: rgba(255, 122, 80, 0.1);
+        }
+
+        &:hover {
+            background-color: #FF7A50;
+        }
+
+        &:active {
+            background-color: #FFF2ED;
+            outline-color: transparent;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: 19px;
+            height: 19px;
+            background-size: 19px 19px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+
+    &__icon--search {
+        &::before {
+            background-image: url(../images/icons/search-icon.svg);
+        }
+    }
+
+    &__icon--buy {
+        position: relative;
+
+        &::before {
+            background-image: url(../images/icons/buy-icon.svg);
+            background-size: 19px 18px;
+        }
+    }
+
+    &__num {
+        position: absolute;
+        display: none;
+        font-size: 10px;
+        border-radius: 50%;
+        background-color: $accent;
+        width: 14px;
+        height: 14px;
+        text-align: center;
+        transform: translateY(-6px);
+        left: 11px;
+    }
+}
+
+.sectiion {
+    margin-bottom: 120px;
+}
+
+.hero {
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__content {
+        margin-right: 160px;
+        max-width: 450px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__offer {
+        margin-bottom: 32px;
+    }
+
+    &__title {
+        color: $dark;
+        font-weight: 500;
+        font-size: 66px;
+        line-height: 130%;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+
+        span {
+            color: $accent;
+            display: block;
+        }
+    }
+
+    &__img img {
+        max-width: 560px;
+        max-height: 660px;
+        width: 100%;
+    }
+}
+
+.cta {
+
+    &__items {
+        display: flex;
+    }
+
+    &__item {
+        margin-right: 35px;
+    }
+
+}
+
+.button {
+    padding: 12px 32px;
+    background-color: $accent;
+    border-radius: 5px;
+    color: #fff;
+    outline: 2px solid transparent;
+    transition: all 0.5s;
+
+    &:focus {
+        outline-color: rgba(255, 104, 56, 0.7);
+        background-color: rgba(255, 122, 80, 0.1);
+        color: $accent;
+    }
+
+    &:hover {
+        outline-color: rgba(255, 104, 56, 0.7);
+        background-color: #fff;
+        color: $accent;
+    }
+
+    &:active {
+        background-color: #FFF2ED;
+        outline-color: transparent;
+        color: $accent;
+    }
+}
+
+.add {
+    text-decoration: underline
+}
 
 
 

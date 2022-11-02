@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,11 +8,94 @@
     <link rel="stylesheet" href="css\style.min.css">
     <title>Document</title>
 </head>
-<body>
-    
 
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <a class="logo" href="#">
+                    <img class="logo__img" src="images/logo.svg" alt="Логотип">
+                </a>
+                <div class="menu">
+                    <nav class="menu-nav">
+
+                        <ul class="menu-nav__list">
+                            <li class="menu-nav__item">
+                                <a href="" class="menu-nav__link menu-nav__link--active">Главная</a>
+                            </li>
+                            <li class="menu-nav__item">
+                                <a href="" class="menu-nav__link">Блюда</a>
+                            </li>
+                            <li class="menu-nav__item">
+                                <a href="" class="menu-nav__link">Контакты</a>
+                            </li>
+                        </ul>
+
+                    </nav>
+
+                    <nav class="user-nav">
+
+                        <ul class="user-nav__list">
+                            <li class="user-nav__item">
+                                <a class="user-nav__icon user-nav__icon--search" href="#"></a>
+                            </li>
+                            <li class="user-nav__item">
+                                <a class="user-nav__icon user-nav__icon--buy" href="#">
+                                    <span class="user-nav__num">4</span>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                </div>
+
+
+            </div>
+
+        </div>
+    </header>
+    <main>
+        <section class="hero section">
+            <div class="container">
+                <div class="hero__inner">
+                    <div class="hero__content">
+                        <div class="hero__offer">
+                            <h1 class="hero__title">
+                                Доставка<span>за 15 минут</span>
+                            </h1>
+
+                            <p class="hero__desc">
+                                Самый быстрый сервис доставки еды в вашем городе. Не уложимся в срок - доставка за наш
+                                счёт
+                            </p>
+
+                        </div>
+
+                        <div class="cta">
+                            <ul class="cta__items">
+                                <li class="cta__item">
+                                    <a class="button" href="#">Заказать</a>
+                                </li>
+
+                                <li class="cta__item">
+                                    <a class="add" href="#">Подробнее</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="hero__img">
+                        <img src="images/content/hero-pic.png" alt="Куръер">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
 
 
     <script src="js/main.min.js"></script>
 </body>
+
 </html>
